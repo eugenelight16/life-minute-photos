@@ -447,6 +447,27 @@ function getVariants() {
 }
 
 function getItem(item_id) {
+    if(rotateL.items.count !== null) {
+        rotateL.items.count++;
+
+        let elapsed = (timeNow(true) - rotateL.items.lastStart);
+
+        elapsed = numberWithCommas(elapsed);
+
+        let sec = ((timeNow(true) - rotateL.items.lastStart) / 1000);
+
+        let photos_per_sec = rotateL.items.count / sec;
+
+        console.log({
+            photos_per_sec: parseFloat(photos_per_sec.toFixed(2)),
+            photos: numberWithCommas(rotateL.items.count),
+            time: {
+                ms: elapsed,
+                sec: parseFloat(sec.toFixed(3))
+            }
+        });
+    }
+
     return items.data[item_id];
 }
 

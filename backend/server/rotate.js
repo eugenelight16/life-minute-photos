@@ -1,5 +1,9 @@
 module.exports = {
     name: 'rotate',
+    items: {
+        count: null,
+        lastStart: null
+    },
     setRotate: function (bool) {
         return new Promise(async (resolve, reject) => {
             try {
@@ -31,5 +35,10 @@ module.exports = {
 
             resolve(bool);
         });
+    },
+    countRotate: function () {
+        rotateL.items.count = 0;
+
+        rotateL.items.lastStart = timeNow(true);
     }
 };

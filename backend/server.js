@@ -32,6 +32,7 @@ global.cacheL = require('./server/cache');
 global.organizeL = require('./server/organize');
 global.gridL = require('./server/grid');
 global.viewsL = require('./server/views');
+global.rotateL = require('./server/rotate');
 global.timeL = require('./server/time');
 global.styleL = require('./server/style');
 global.settingsL = require('./server/settings');

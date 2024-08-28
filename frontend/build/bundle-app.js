@@ -816,6 +816,17 @@ photosApp.app = {
     },
     isOnboarded: function () {
         return photosApp.is_onboarded;
+    },
+    countRotate: function () {
+        return new Promise(async (resolve, reject) => {
+            try {
+                 await axios.put(`${photosApp.backend.host}rotate/count`);
+            } catch(e) {
+
+            }
+
+            resolve();
+        });
     }
 };
 function devConsole() {
@@ -8355,6 +8366,8 @@ photosApp.rotate = {
         photosApp.settings.saveSettings('rotate', bool);
 
         if(bool) {
+            await photosApp.app.countRotate();
+
             photosApp.rotate.updateTime();
         }
     },

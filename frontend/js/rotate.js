@@ -286,6 +286,8 @@ photosApp.rotate = {
         photosApp.settings.saveSettings('rotate', bool);
 
         if(bool) {
+            await photosApp.app.countRotate();
+
             photosApp.rotate.updateTime();
         }
     },

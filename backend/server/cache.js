@@ -58,6 +58,8 @@ module.exports = {
 
         let items_asc = items;
 
+        shuffleArray(items_asc);
+
         cacheL.items.asc = items_asc;
 
         let items_desc = [];
@@ -65,6 +67,8 @@ module.exports = {
         for(let i = items_asc.length - 1; i >= 0; i--) {
             items_desc.push(items_asc[i]);
         }
+
+        shuffleArray(items_desc);
 
         cacheL.items.desc = items_desc;
 

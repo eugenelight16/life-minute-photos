@@ -527,7 +527,7 @@ async function processFolders() {
                         let existing_local = null;
 
                         if(file.md5 in itemsL.md5s) {
-                            existing_local = itemsL.md5s[file.md5];
+                            // existing_local = itemsL.md5s[file.md5];
                         }
 
                         let ext = getExt(file.file, true);

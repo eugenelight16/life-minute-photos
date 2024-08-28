@@ -577,4 +577,15 @@ module.exports = async function(app){
             res.send(e);
         }
     });
+
+    app.put('/rotate/count', async function (req, res) {
+        try {
+            rotateL.countRotate();
+            res.status(200);
+            res.send();
+        } catch (e) {
+            res.status(400);
+            res.send(e);
+        }
+    });
 };
