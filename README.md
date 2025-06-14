@@ -15,7 +15,7 @@ https://nodejs.org/en/download/prebuilt-installer
 
 # Install
 
-`git clone https://github.com/egekhter/life-minute-photos.git`
+`git clone https://github.com/eugenelight16/life-minute-photos.git`
 
 `cd life-minute-photos`
 

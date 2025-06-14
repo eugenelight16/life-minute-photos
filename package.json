@@ -4,11 +4,11 @@
   "version": "1.0.2",
   "description": "10,000 photos in one minute",
   "license": "MIT",
-  "repository": "egekhter/life-minute",
+  "repository": "eugenelight16/life-minute-photos",
   "homepage": "https://lifeminute.dev",
   "author": {
-    "name": "Eugene Gekhter",
-    "email": "egekhter@gmail.com",
+    "name": "Eugene Light",
+    "email": "eugene@befriend.app",
     "url": "https://lifeminute.dev"
   },
   "productNameShort": "Life Minute",
