@@ -67,7 +67,7 @@ let db = {
     loadData: function (table_name) {
         return new Promise(async (resolve, reject) => {
             try {
-                let data = getLocalFile(db.dir, table_name + '.json', true);
+                let data = await getLocalFile(db.dir, table_name + '.json', true);
 
                 if(typeof data === 'string') {
                     data = JSON.parse(data);
