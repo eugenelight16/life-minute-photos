@@ -22,7 +22,7 @@ module.exports = {
                 return resolve(_grid);
             }
 
-            let items_split = chunkArray(items, settingsL.data.feature.parallel);
+            let items_split = chunkArrayByDateRange(items, settingsL.data.feature.parallel);
 
             let row_range = 10;
             let rowOptions = {};

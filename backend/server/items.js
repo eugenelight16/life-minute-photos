@@ -42,7 +42,7 @@ function getLife(ret_array, dir) {
             console.error(e);
         }
 
-        let items_split = chunkArray(items, settingsL.data.feature.parallel);
+        let items_split = chunkArrayByDateRange(items, settingsL.data.feature.parallel);
 
         for(let i = 0; i < settingsL.data.feature.parallel; i++) {
             cacheL.life.obj[i] = items_split[i];

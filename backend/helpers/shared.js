@@ -1786,6 +1786,55 @@ global.chunkArray = function(arr, num_chunks) {
     return chunkedArr;
 }
 
+global.chunkArrayByDateRange = function (arr, num_chunks) {
+    if (!arr || arr.length === 0) {
+        return [];
+    }
+
+    if (arr.length < num_chunks) {
+        num_chunks = arr.length;
+    }
+
+    // Sort items by date, respecting the current chronology setting
+    let sortedItems = [...arr].sort((a, b) => {
+        let dateA = getMasterDate(a);
+        let dateB = getMasterDate(b);
+
+        // Check current chronology setting
+        if (settingsL.data.feature.chronology === 'desc') {
+            // For descending: latest dates first
+            return dateA > dateB ? -1 : (dateA < dateB ? 1 : 0);
+        } else {
+            // For ascending: earliest dates first
+            return dateA < dateB ? -1 : (dateA > dateB ? 1 : 0);
+        }
+    });
+
+    let chunkedArr = [];
+    let itemsPerChunk = Math.floor(sortedItems.length / num_chunks);
+    let remainder = sortedItems.length % num_chunks;
+
+    let currentIndex = 0;
+
+    for (let c = 0; c < num_chunks; c++) {
+        let chunkSize = itemsPerChunk;
+
+        // Distribute remainder items to first few chunks
+        if (c < remainder) {
+            chunkSize += 1;
+        }
+
+        chunkedArr[c] = [];
+
+        for (let i = 0; i < chunkSize && currentIndex < sortedItems.length; i++) {
+            chunkedArr[c].push(sortedItems[currentIndex]);
+            currentIndex++;
+        }
+    }
+
+    return chunkedArr;
+}
+
 global.writeFile = function (filePath, buffer, cb) {
     return new Promise((resolve, reject) => {
         let fs = require('fs');
