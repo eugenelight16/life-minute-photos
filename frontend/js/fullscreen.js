@@ -909,7 +909,10 @@ photosApp.fullscreen = {
         slidesContainer.addEventListener('touchcancel', handleTouchEnd);
     },
     exitFullscreen: function (y_speed) {
-        if(photosApp.fullscreen.exit.in_progress || photosApp.fullscreen.open_in_progress) {
+        // if(photosApp.fullscreen.exit.in_progress || photosApp.fullscreen.open_in_progress) {
+        //     return false;
+        // }
+        if(photosApp.fullscreen.open_in_progress) {
             return false;
         }
 
