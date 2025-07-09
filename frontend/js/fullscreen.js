@@ -228,7 +228,7 @@ photosApp.fullscreen = {
 
             removeClassEl('hide-image', image_transition);
 
-            image_transition.style.background = `url('${selected_url}')`;
+            // image_transition.style.background = `url('${selected_url}')`;
 
             let bcr = selected_image.getBoundingClientRect();
             image_transition.style.width = bcr.width + 'px';
@@ -280,7 +280,7 @@ photosApp.fullscreen = {
                 image_transition.style.transform = `translate3d(${transform_l}px, ${transform_t}px, 0) scale(${i_ratio})`;
             });
 
-            await timeoutAwait(null, photosApp.fullscreen.open_image_transition + 16);
+            // await timeoutAwait(null, photosApp.fullscreen.open_image_transition + 16);
         } catch (e) {
 
         }
@@ -322,7 +322,7 @@ photosApp.fullscreen = {
                 photosApp.fullscreen.init_finished = true;
                 photosApp.fullscreen.setOpenInProgress(false);
 
-            }, 50);
+            }, 0);
         });
     },
     initProps: function () {
